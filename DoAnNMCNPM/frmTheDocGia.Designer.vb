@@ -37,9 +37,9 @@ Partial Class frmTheDocGia
         Me.Label7 = New System.Windows.Forms.Label()
         Me.datiNgaylapthe = New System.Windows.Forms.DateTimePicker()
         Me.btNhap = New System.Windows.Forms.Button()
-        Me.tbxloaidocgia = New System.Windows.Forms.TextBox()
         Me.tbxmathe = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.cbbLoaidocgia = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'Label1
@@ -115,11 +115,6 @@ Partial Class frmTheDocGia
         Me.btNhap.Name = "btNhap"
         Me.btNhap.UseVisualStyleBackColor = True
         '
-        'tbxloaidocgia
-        '
-        resources.ApplyResources(Me.tbxloaidocgia, "tbxloaidocgia")
-        Me.tbxloaidocgia.Name = "tbxloaidocgia"
-        '
         'tbxmathe
         '
         resources.ApplyResources(Me.tbxmathe, "tbxmathe")
@@ -131,10 +126,18 @@ Partial Class frmTheDocGia
         resources.ApplyResources(Me.Label8, "Label8")
         Me.Label8.Name = "Label8"
         '
+        'cbbLoaidocgia
+        '
+        Me.cbbLoaidocgia.FormattingEnabled = True
+        Me.cbbLoaidocgia.Items.AddRange(New Object() {resources.GetString("cbbLoaidocgia.Items")})
+        resources.ApplyResources(Me.cbbLoaidocgia, "cbbLoaidocgia")
+        Me.cbbLoaidocgia.Name = "cbbLoaidocgia"
+        '
         'frmTheDocGia
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.cbbLoaidocgia)
         Me.Controls.Add(Me.tbxmathe)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.btNhap)
@@ -143,7 +146,6 @@ Partial Class frmTheDocGia
         Me.Controls.Add(Me.datingaysinh)
         Me.Controls.Add(Me.tbxEmail)
         Me.Controls.Add(Me.tbxDiaChi)
-        Me.Controls.Add(Me.tbxloaidocgia)
         Me.Controls.Add(Me.tbxHoTen)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label7)
@@ -172,7 +174,7 @@ Partial Class frmTheDocGia
     Friend WithEvents Label7 As Label
     Friend WithEvents datiNgaylapthe As DateTimePicker
     Friend WithEvents btNhap As Button
-    Friend WithEvents tbxloaidocgia As TextBox
     Friend WithEvents tbxmathe As TextBox
     Friend WithEvents Label8 As Label
+    Friend WithEvents cbbLoaidocgia As ComboBox
 End Class
