@@ -79,7 +79,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="SachBUS.vb" />
+    <Compile Include="TacGiaBUS.vb" />
     <Compile Include="TheDocGiaBUS.vb" />
+    <Compile Include="TheLoaiSachBUS.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

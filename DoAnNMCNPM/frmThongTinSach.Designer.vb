@@ -34,16 +34,18 @@ Partial Class frmThongTinSach
         Me.Label7 = New System.Windows.Forms.Label()
         Me.tbxTrigia = New System.Windows.Forms.TextBox()
         Me.tbxNhaxuatban = New System.Windows.Forms.TextBox()
-        Me.tbxTheloai = New System.Windows.Forms.TextBox()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.datiNgaynhap = New System.Windows.Forms.DateTimePicker()
         Me.btNhap = New System.Windows.Forms.Button()
+        Me.tbxMasach = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.tbxNamxuatban = New System.Windows.Forms.TextBox()
+        Me.cbbTheLoai = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(50, 23)
+        Me.Label1.Location = New System.Drawing.Point(54, 58)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(58, 13)
         Me.Label1.TabIndex = 0
@@ -52,7 +54,7 @@ Partial Class frmThongTinSach
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(50, 59)
+        Me.Label2.Location = New System.Drawing.Point(54, 94)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(49, 13)
         Me.Label2.TabIndex = 0
@@ -60,14 +62,14 @@ Partial Class frmThongTinSach
         '
         'tbxTensach
         '
-        Me.tbxTensach.Location = New System.Drawing.Point(127, 23)
+        Me.tbxTensach.Location = New System.Drawing.Point(131, 58)
         Me.tbxTensach.Name = "tbxTensach"
         Me.tbxTensach.Size = New System.Drawing.Size(170, 20)
         Me.tbxTensach.TabIndex = 1
         '
         'tbxTacgia
         '
-        Me.tbxTacgia.Location = New System.Drawing.Point(127, 59)
+        Me.tbxTacgia.Location = New System.Drawing.Point(131, 94)
         Me.tbxTacgia.Name = "tbxTacgia"
         Me.tbxTacgia.Size = New System.Drawing.Size(170, 20)
         Me.tbxTacgia.TabIndex = 1
@@ -75,7 +77,7 @@ Partial Class frmThongTinSach
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(50, 98)
+        Me.Label3.Location = New System.Drawing.Point(54, 133)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(51, 13)
         Me.Label3.TabIndex = 0
@@ -84,7 +86,7 @@ Partial Class frmThongTinSach
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(50, 137)
+        Me.Label4.Location = New System.Drawing.Point(54, 172)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(71, 13)
         Me.Label4.TabIndex = 2
@@ -93,7 +95,7 @@ Partial Class frmThongTinSach
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(50, 205)
+        Me.Label5.Location = New System.Drawing.Point(54, 240)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(59, 13)
         Me.Label5.TabIndex = 3
@@ -102,7 +104,7 @@ Partial Class frmThongTinSach
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(50, 169)
+        Me.Label6.Location = New System.Drawing.Point(54, 204)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(79, 13)
         Me.Label6.TabIndex = 4
@@ -119,7 +121,7 @@ Partial Class frmThongTinSach
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(50, 241)
+        Me.Label7.Location = New System.Drawing.Point(54, 276)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(42, 13)
         Me.Label7.TabIndex = 12
@@ -127,60 +129,77 @@ Partial Class frmThongTinSach
         '
         'tbxTrigia
         '
-        Me.tbxTrigia.Location = New System.Drawing.Point(127, 244)
+        Me.tbxTrigia.Location = New System.Drawing.Point(131, 279)
         Me.tbxTrigia.Name = "tbxTrigia"
-        Me.tbxTrigia.ReadOnly = True
         Me.tbxTrigia.Size = New System.Drawing.Size(170, 20)
         Me.tbxTrigia.TabIndex = 13
         '
         'tbxNhaxuatban
         '
-        Me.tbxNhaxuatban.Location = New System.Drawing.Point(127, 137)
+        Me.tbxNhaxuatban.Location = New System.Drawing.Point(131, 172)
         Me.tbxNhaxuatban.Name = "tbxNhaxuatban"
-        Me.tbxNhaxuatban.ReadOnly = True
         Me.tbxNhaxuatban.Size = New System.Drawing.Size(170, 20)
         Me.tbxNhaxuatban.TabIndex = 14
         '
-        'tbxTheloai
+        'datiNgaynhap
         '
-        Me.tbxTheloai.Location = New System.Drawing.Point(127, 98)
-        Me.tbxTheloai.Name = "tbxTheloai"
-        Me.tbxTheloai.ReadOnly = True
-        Me.tbxTheloai.Size = New System.Drawing.Size(170, 20)
-        Me.tbxTheloai.TabIndex = 15
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(127, 169)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(170, 20)
-        Me.DateTimePicker1.TabIndex = 16
-        '
-        'DateTimePicker2
-        '
-        Me.DateTimePicker2.Location = New System.Drawing.Point(127, 205)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(170, 20)
-        Me.DateTimePicker2.TabIndex = 16
+        Me.datiNgaynhap.Location = New System.Drawing.Point(131, 240)
+        Me.datiNgaynhap.Name = "datiNgaynhap"
+        Me.datiNgaynhap.Size = New System.Drawing.Size(170, 20)
+        Me.datiNgaynhap.TabIndex = 16
         '
         'btNhap
         '
-        Me.btNhap.Location = New System.Drawing.Point(221, 291)
+        Me.btNhap.Location = New System.Drawing.Point(225, 326)
         Me.btNhap.Name = "btNhap"
         Me.btNhap.Size = New System.Drawing.Size(135, 57)
         Me.btNhap.TabIndex = 18
         Me.btNhap.Text = "Nhập"
         Me.btNhap.UseVisualStyleBackColor = True
         '
+        'tbxMasach
+        '
+        Me.tbxMasach.Location = New System.Drawing.Point(131, 23)
+        Me.tbxMasach.Name = "tbxMasach"
+        Me.tbxMasach.ReadOnly = True
+        Me.tbxMasach.Size = New System.Drawing.Size(170, 20)
+        Me.tbxMasach.TabIndex = 20
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(54, 23)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(50, 13)
+        Me.Label8.TabIndex = 19
+        Me.Label8.Text = "Mã Sách"
+        '
+        'tbxNamxuatban
+        '
+        Me.tbxNamxuatban.Location = New System.Drawing.Point(131, 204)
+        Me.tbxNamxuatban.Name = "tbxNamxuatban"
+        Me.tbxNamxuatban.Size = New System.Drawing.Size(170, 20)
+        Me.tbxNamxuatban.TabIndex = 21
+        '
+        'cbbTheLoai
+        '
+        Me.cbbTheLoai.FormattingEnabled = True
+        Me.cbbTheLoai.Location = New System.Drawing.Point(132, 131)
+        Me.cbbTheLoai.Name = "cbbTheLoai"
+        Me.cbbTheLoai.Size = New System.Drawing.Size(168, 21)
+        Me.cbbTheLoai.TabIndex = 22
+        '
         'frmThongTinSach
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(616, 408)
+        Me.Controls.Add(Me.cbbTheLoai)
+        Me.Controls.Add(Me.tbxNamxuatban)
+        Me.Controls.Add(Me.tbxMasach)
+        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.btNhap)
-        Me.Controls.Add(Me.DateTimePicker2)
-        Me.Controls.Add(Me.DateTimePicker1)
-        Me.Controls.Add(Me.tbxTheloai)
+        Me.Controls.Add(Me.datiNgaynhap)
         Me.Controls.Add(Me.tbxNhaxuatban)
         Me.Controls.Add(Me.tbxTrigia)
         Me.Controls.Add(Me.Label7)
@@ -212,8 +231,10 @@ Partial Class frmThongTinSach
     Friend WithEvents Label7 As Label
     Friend WithEvents tbxTrigia As TextBox
     Friend WithEvents tbxNhaxuatban As TextBox
-    Friend WithEvents tbxTheloai As TextBox
-    Friend WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents DateTimePicker2 As DateTimePicker
+    Friend WithEvents datiNgaynhap As DateTimePicker
     Friend WithEvents btNhap As Button
+    Friend WithEvents tbxMasach As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents tbxNamxuatban As TextBox
+    Friend WithEvents cbbTheLoai As ComboBox
 End Class

@@ -6,34 +6,14 @@ Imports Utility
 Public Class frmTheDocGia
 
     Private ldgBus As LoaiDocGiaBUS
-
-
-    Private hsBus As TheDocGiaBUS
-
+    Private dgBUS As TheDocGiaBUS
 
     Private Sub frmTheDocGia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        hsBus = New TheDocGiaBUS()
-        ldgBus = New LoaiDocGiaBUS()
-        ''   lhsBus = New LoaiHocSinhBUS()
+        dgBUS = New TheDocGiaBUS()
 
-        '' Load LoaiDocGia list
-        'Dim listLoaiDocGia = New List(Of LoaiHocSinhDTO)
-        'Dim result As Result
-        'result = lhsBus.selectAll(listLoaiDocGia)
-        'If (result.FlagResult = False) Then
-        '    MessageBox.Show("Lấy danh sách loại học sinh không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        '    System.Console.WriteLine(result.SystemMessage)
-        '    Me.Close()
-        '    Return
-        'End If
-        'cbLoaiDG.DataSource = New BindingSource(listLoaiDocGia, String.Empty)
-        'cbLoaiDG.DisplayMember = "TenLoai"
-        'cbLoaiDG.ValueMember = "MaLoaiHS"
-
-        'set MSSH auto
         Dim nextMshs = "1"
         Dim result As Result
-        result = hsBus.buildMadocgia(nextMshs)
+        result = dgBUS.buildMadocgia(nextMshs)
         If (result.FlagResult = False) Then
             MessageBox.Show("Lấy danh tự động mã Thẻ không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
@@ -59,19 +39,19 @@ Public Class frmTheDocGia
         docgia.maloaidocgia = Convert.ToInt32(cbbLoaidocgia.Text)
 
         ''2. Business .....
-        'If (hsBus.isValidName(docgia) = False) Then
+        'If (dgBUS.isValidName(docgia) = False) Then
         '    MessageBox.Show("Họ tên độc giả không đúng")
         '    txtHoTen.Focus()
         '    Return
         'End If
         ''3. Insert to DB
         Dim result As Result
-        result = hsBus.insert(docgia)
+        result = dgBUS.insert(docgia)
         If (result.FlagResult = True) Then
             MessageBox.Show("Thêm Độc giả thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
             'set MSSH auto
             Dim nextMshs = "1"
-            result = hsBus.buildMadocgia(nextMshs)
+            result = dgBUS.buildMadocgia(nextMshs)
             If (result.FlagResult = False) Then
                 MessageBox.Show("Lấy danh tự động mã Độc giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Me.Close()
@@ -90,13 +70,13 @@ Public Class frmTheDocGia
         End If
     End Sub
     Private Sub frmDocGiaGUI_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        ' Load LoaiHocSinh list
+        ldgBus = New LoaiDocGiaBUS()
+        ' Load LoaiDocGia list
         Dim listLoaiDocGia = New List(Of LoaiDocGiaDTO)
         Dim result As Result
         result = ldgBus.selectAll(listLoaiDocGia)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh sách loại học sinh không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy danh sách loại độc giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Me.Close()
             Return
@@ -107,4 +87,7 @@ Public Class frmTheDocGia
 
     End Sub
 
+    Private Sub datiNgaylapthe_ValueChanged(sender As Object, e As EventArgs) Handles datiNgaylapthe.ValueChanged
+        datiHansudung.Value = datiNgaylapthe.Value.AddMonths(6)
+    End Sub
 End Class

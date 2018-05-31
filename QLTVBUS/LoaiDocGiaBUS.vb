@@ -1,6 +1,7 @@
 ﻿Imports QLTVDAL
 Imports QLTVDTO
 Imports Utility
+
 Public Class LoaiDocGiaBUS
     Private ldgDAL As LoaiDocGiaDAL
     Public Sub New()
@@ -19,17 +20,17 @@ Public Class LoaiDocGiaBUS
 
     End Function
 
-    Public Function insert(lhs As LoaiDocGiaDTO) As Result
+    Public Function insert(ldg As LoaiDocGiaDTO) As Result
         '1. verify data here!!
 
         '2. insert to DB
-        Return ldgDAL.insert(lhs)
+        Return ldgDAL.insert(ldg)
     End Function
-    Public Function update(lhs As LoaiDocGiaDTO) As Result
+    Public Function update(ldg As LoaiDocGiaDTO) As Result
         '1. verify data here!!
 
         '2. insert to DB
-        Return ldgDAL.update(lhs)
+        Return ldgDAL.update(ldg)
     End Function
     Public Function delete(maLoai As Integer) As Result
         '1. verify data here!!
@@ -37,11 +38,11 @@ Public Class LoaiDocGiaBUS
         '2. insert to DB
         Return ldgDAL.delete(maLoai)
     End Function
-    Public Function selectAll(ByRef listLoaiHS As List(Of LoaiDocGiaDTO)) As Result
+    Public Function selectAll(ByRef listLoaiDocGia As List(Of LoaiDocGiaDTO)) As Result
         '1. verify data here!!
 
         '2. insert to DB
-        Return ldgDAL.selectALL(listLoaiHS)
+        Return ldgDAL.selectALL(listLoaiDocGia)
     End Function
     Public Function getNextID(ByRef nextID As Integer) As Result
         Return ldgDAL.getNextID(nextID)
