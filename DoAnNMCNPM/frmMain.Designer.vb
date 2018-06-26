@@ -24,6 +24,7 @@ Partial Class frmMain
     Private Sub InitializeComponent()
         Me.btThemdocgia = New System.Windows.Forms.Button()
         Me.btThemthongtinsach = New System.Windows.Forms.Button()
+        Me.btnTraCuuSach = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btThemdocgia
@@ -44,11 +45,21 @@ Partial Class frmMain
         Me.btThemthongtinsach.Text = "Thêm Thông Tin Sách"
         Me.btThemthongtinsach.UseVisualStyleBackColor = True
         '
+        'btnTraCuuSach
+        '
+        Me.btnTraCuuSach.Location = New System.Drawing.Point(255, 161)
+        Me.btnTraCuuSach.Name = "btnTraCuuSach"
+        Me.btnTraCuuSach.Size = New System.Drawing.Size(271, 75)
+        Me.btnTraCuuSach.TabIndex = 2
+        Me.btnTraCuuSach.Text = "Tra Cứu Sách"
+        Me.btnTraCuuSach.UseVisualStyleBackColor = True
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(741, 337)
+        Me.Controls.Add(Me.btnTraCuuSach)
         Me.Controls.Add(Me.btThemthongtinsach)
         Me.Controls.Add(Me.btThemdocgia)
         Me.Name = "frmMain"
@@ -59,4 +70,5 @@ Partial Class frmMain
 
     Friend WithEvents btThemdocgia As Button
     Friend WithEvents btThemthongtinsach As Button
+    Friend WithEvents btnTraCuuSach As Button
 End Class

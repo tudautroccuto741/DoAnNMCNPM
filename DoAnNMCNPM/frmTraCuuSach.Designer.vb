@@ -30,18 +30,19 @@ Partial Class frmTraCuuSach
         Me.dgvListSach = New System.Windows.Forms.DataGridView()
         Me.cbbTheLoaiSach = New System.Windows.Forms.ComboBox()
         Me.txbTenSach = New System.Windows.Forms.TextBox()
-        Me.txbTacGia = New System.Windows.Forms.TextBox()
         Me.txbMaSach = New System.Windows.Forms.TextBox()
         Me.txbTinhTrang = New System.Windows.Forms.TextBox()
         Me.btCapNhat = New System.Windows.Forms.Button()
         Me.btXoa = New System.Windows.Forms.Button()
+        Me.cbbTacGia = New System.Windows.Forms.ComboBox()
+        Me.btntim = New System.Windows.Forms.Button()
         CType(Me.dgvListSach, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(53, 375)
+        Me.Label1.Location = New System.Drawing.Point(53, 345)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(56, 13)
         Me.Label1.TabIndex = 0
@@ -50,7 +51,7 @@ Partial Class frmTraCuuSach
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(356, 59)
+        Me.Label2.Location = New System.Drawing.Point(338, 12)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(51, 13)
         Me.Label2.TabIndex = 1
@@ -61,9 +62,9 @@ Partial Class frmTraCuuSach
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(53, 63)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(60, 13)
+        Me.Label3.Size = New System.Drawing.Size(56, 13)
         Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Tên Sách: "
+        Me.Label3.Text = "Mã Sách: "
         '
         'Label4
         '
@@ -77,7 +78,7 @@ Partial Class frmTraCuuSach
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(324, 378)
+        Me.Label5.Location = New System.Drawing.Point(324, 345)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(65, 13)
         Me.Label5.TabIndex = 4
@@ -88,7 +89,7 @@ Partial Class frmTraCuuSach
         Me.dgvListSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvListSach.Location = New System.Drawing.Point(43, 107)
         Me.dgvListSach.Name = "dgvListSach"
-        Me.dgvListSach.Size = New System.Drawing.Size(709, 220)
+        Me.dgvListSach.Size = New System.Drawing.Size(669, 220)
         Me.dgvListSach.TabIndex = 5
         '
         'cbbTheLoaiSach
@@ -106,16 +107,9 @@ Partial Class frmTraCuuSach
         Me.txbTenSach.Size = New System.Drawing.Size(207, 20)
         Me.txbTenSach.TabIndex = 7
         '
-        'txbTacGia
-        '
-        Me.txbTacGia.Location = New System.Drawing.Point(413, 56)
-        Me.txbTacGia.Name = "txbTacGia"
-        Me.txbTacGia.Size = New System.Drawing.Size(211, 20)
-        Me.txbTacGia.TabIndex = 8
-        '
         'txbMaSach
         '
-        Me.txbMaSach.Location = New System.Drawing.Point(115, 375)
+        Me.txbMaSach.Location = New System.Drawing.Point(115, 342)
         Me.txbMaSach.Name = "txbMaSach"
         Me.txbMaSach.ReadOnly = True
         Me.txbMaSach.Size = New System.Drawing.Size(172, 20)
@@ -123,14 +117,14 @@ Partial Class frmTraCuuSach
         '
         'txbTinhTrang
         '
-        Me.txbTinhTrang.Location = New System.Drawing.Point(395, 375)
+        Me.txbTinhTrang.Location = New System.Drawing.Point(395, 342)
         Me.txbTinhTrang.Name = "txbTinhTrang"
         Me.txbTinhTrang.Size = New System.Drawing.Size(221, 20)
         Me.txbTinhTrang.TabIndex = 10
         '
         'btCapNhat
         '
-        Me.btCapNhat.Location = New System.Drawing.Point(206, 450)
+        Me.btCapNhat.Location = New System.Drawing.Point(165, 390)
         Me.btCapNhat.Name = "btCapNhat"
         Me.btCapNhat.Size = New System.Drawing.Size(141, 33)
         Me.btCapNhat.TabIndex = 11
@@ -139,23 +133,41 @@ Partial Class frmTraCuuSach
         '
         'btXoa
         '
-        Me.btXoa.Location = New System.Drawing.Point(429, 450)
+        Me.btXoa.Location = New System.Drawing.Point(395, 390)
         Me.btXoa.Name = "btXoa"
         Me.btXoa.Size = New System.Drawing.Size(141, 33)
         Me.btXoa.TabIndex = 12
         Me.btXoa.Text = "Xóa"
         Me.btXoa.UseVisualStyleBackColor = True
         '
+        'cbbTacGia
+        '
+        Me.cbbTacGia.FormattingEnabled = True
+        Me.cbbTacGia.Location = New System.Drawing.Point(395, 12)
+        Me.cbbTacGia.Name = "cbbTacGia"
+        Me.cbbTacGia.Size = New System.Drawing.Size(218, 21)
+        Me.cbbTacGia.TabIndex = 13
+        '
+        'btntim
+        '
+        Me.btntim.Location = New System.Drawing.Point(637, 10)
+        Me.btntim.Name = "btntim"
+        Me.btntim.Size = New System.Drawing.Size(75, 23)
+        Me.btntim.TabIndex = 14
+        Me.btntim.Text = "Tìm"
+        Me.btntim.UseVisualStyleBackColor = True
+        '
         'frmTraCuuSach
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(794, 510)
+        Me.ClientSize = New System.Drawing.Size(725, 432)
+        Me.Controls.Add(Me.btntim)
+        Me.Controls.Add(Me.cbbTacGia)
         Me.Controls.Add(Me.btXoa)
         Me.Controls.Add(Me.btCapNhat)
         Me.Controls.Add(Me.txbTinhTrang)
         Me.Controls.Add(Me.txbMaSach)
-        Me.Controls.Add(Me.txbTacGia)
         Me.Controls.Add(Me.txbTenSach)
         Me.Controls.Add(Me.cbbTheLoaiSach)
         Me.Controls.Add(Me.dgvListSach)
@@ -180,9 +192,10 @@ Partial Class frmTraCuuSach
     Friend WithEvents dgvListSach As DataGridView
     Friend WithEvents cbbTheLoaiSach As ComboBox
     Friend WithEvents txbTenSach As TextBox
-    Friend WithEvents txbTacGia As TextBox
     Friend WithEvents txbMaSach As TextBox
     Friend WithEvents txbTinhTrang As TextBox
     Friend WithEvents btCapNhat As Button
     Friend WithEvents btXoa As Button
+    Friend WithEvents cbbTacGia As ComboBox
+    Friend WithEvents btntim As Button
 End Class

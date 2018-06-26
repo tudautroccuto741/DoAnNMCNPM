@@ -120,7 +120,7 @@ Public Class TheLoaiSachDAL
         Return New Result(True) ' thanh cong
     End Function
 
-    Public Function selectALL(ByRef listLoaiHS As List(Of TheLoaiSachDTO)) As Result
+    Public Function selectALL(ByRef listLoaiSach As List(Of TheLoaiSachDTO)) As Result
 
         Dim query As String = String.Empty
         query &= " SELECT [matheloaisach], [tentheloaisach]"
@@ -139,9 +139,9 @@ Public Class TheLoaiSachDAL
                     Dim reader As SqlDataReader
                     reader = comm.ExecuteReader()
                     If reader.HasRows = True Then
-                        listLoaiHS.Clear()
+                        listLoaiSach.Clear()
                         While reader.Read()
-                            listLoaiHS.Add(New TheLoaiSachDTO(reader("matheloaisach"), reader("tentheloaisach")))
+                            listLoaiSach.Add(New TheLoaiSachDTO(reader("matheloaisach"), reader("tentheloaisach")))
                         End While
                     End If
                 Catch ex As Exception

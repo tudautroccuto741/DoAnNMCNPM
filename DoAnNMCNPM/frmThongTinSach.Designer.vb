@@ -25,7 +25,6 @@ Partial Class frmThongTinSach
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.tbxTensach = New System.Windows.Forms.TextBox()
-        Me.tbxTacgia = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -40,6 +39,7 @@ Partial Class frmThongTinSach
         Me.Label8 = New System.Windows.Forms.Label()
         Me.tbxNamxuatban = New System.Windows.Forms.TextBox()
         Me.cbbTheLoai = New System.Windows.Forms.ComboBox()
+        Me.cbbTacGia = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'Label1
@@ -66,13 +66,6 @@ Partial Class frmThongTinSach
         Me.tbxTensach.Name = "tbxTensach"
         Me.tbxTensach.Size = New System.Drawing.Size(170, 20)
         Me.tbxTensach.TabIndex = 1
-        '
-        'tbxTacgia
-        '
-        Me.tbxTacgia.Location = New System.Drawing.Point(131, 94)
-        Me.tbxTacgia.Name = "tbxTacgia"
-        Me.tbxTacgia.Size = New System.Drawing.Size(170, 20)
-        Me.tbxTacgia.TabIndex = 1
         '
         'Label3
         '
@@ -189,11 +182,20 @@ Partial Class frmThongTinSach
         Me.cbbTheLoai.Size = New System.Drawing.Size(168, 21)
         Me.cbbTheLoai.TabIndex = 22
         '
+        'cbbTacGia
+        '
+        Me.cbbTacGia.FormattingEnabled = True
+        Me.cbbTacGia.Location = New System.Drawing.Point(130, 93)
+        Me.cbbTacGia.Name = "cbbTacGia"
+        Me.cbbTacGia.Size = New System.Drawing.Size(170, 21)
+        Me.cbbTacGia.TabIndex = 23
+        '
         'frmThongTinSach
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(616, 408)
+        Me.Controls.Add(Me.cbbTacGia)
         Me.Controls.Add(Me.cbbTheLoai)
         Me.Controls.Add(Me.tbxNamxuatban)
         Me.Controls.Add(Me.tbxMasach)
@@ -207,7 +209,6 @@ Partial Class frmThongTinSach
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.tbxTacgia)
         Me.Controls.Add(Me.tbxTensach)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -222,7 +223,6 @@ Partial Class frmThongTinSach
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents tbxTensach As TextBox
-    Friend WithEvents tbxTacgia As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
@@ -237,4 +237,5 @@ Partial Class frmThongTinSach
     Friend WithEvents Label8 As Label
     Friend WithEvents tbxNamxuatban As TextBox
     Friend WithEvents cbbTheLoai As ComboBox
+    Friend WithEvents cbbTacGia As ComboBox
 End Class

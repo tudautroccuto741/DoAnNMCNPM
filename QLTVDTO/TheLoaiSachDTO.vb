@@ -16,7 +16,7 @@
             strMaTheLoaiSach = value
         End Set
     End Property
-    Property TenTheLoaiSach() As String
+    Property TenTheLoaiSach As String
         Get
             Return strTenTheLoaiSach
         End Get

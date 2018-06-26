@@ -183,7 +183,7 @@ Public Class SachDAL
         End Using
         Return New Result(True) ' thanh cong
     End Function
-    Public Function selectALL_ByType(maLoai As Integer, ByRef ListSach As List(Of SachDTO)) As Result
+    Public Function selectALL_ByMaLoai(maLoai As Integer, ByRef ListSach As List(Of SachDTO)) As Result
 
         Dim query As String = String.Empty
         query &= "SELECT [masach], [matheloaisach], [tensach], [matacgia], [ngaynhap], [trigia], [mamxuatban], [nhaxuatban], [tinhtrang] "
@@ -219,4 +219,109 @@ Public Class SachDAL
         Return New Result(True) ' thanh cong
     End Function
 
+    Public Function selectALL_ByMaSach(maSach As String, ByRef ListSach As List(Of SachDTO)) As Result
+
+        Dim query As String = String.Empty
+        query &= "SELECT [masach], [matheloaisach], [tensach], [matacgia], [ngaynhap], [trigia], [mamxuatban], [nhaxuatban], [tinhtrang] "
+        query &= "FROM [tblSach] "
+        query &= "WHERE [masach] = @masach "
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@masach", maSach)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        ListSach.Clear()
+                        While reader.Read()
+                            ListSach.Add(New SachDTO(reader("masach"), reader("matheloaisach"), reader("tensach"), reader("matacgia"), reader("ngaynhap"), reader("trigia"), reader("namxuatban"), reader("nhaxuatban"), reader("tinhtrang")))
+                        End While
+                    End If
+
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False, "Lấy tất cả sách theo Mã không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+    Public Function selectALL_ByMaTG(maTg As Integer, ByRef ListSach As List(Of SachDTO)) As Result
+
+        Dim query As String = String.Empty
+        query &= "SELECT [masach], [matheloaisach], [tensach], [matacgia], [ngaynhap], [trigia], [mamxuatban], [nhaxuatban], [tinhtrang] "
+        query &= "FROM [tblSach] "
+        query &= "WHERE [matacgia] = @matacgia "
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@matacgia", maTg)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        ListSach.Clear()
+                        While reader.Read()
+                            ListSach.Add(New SachDTO(reader("masach"), reader("matheloaisach"), reader("tensach"), reader("matacgia"), reader("ngaynhap"), reader("trigia"), reader("namxuatban"), reader("nhaxuatban"), reader("tinhtrang")))
+                        End While
+                    End If
+
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False, "Lấy tất cả sách theo Mã Tác Giả không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+    Public Function selectALL_ByTinhTrang(maTinhTrang As Integer, ByRef ListSach As List(Of SachDTO)) As Result
+
+        Dim query As String = String.Empty
+        query &= "SELECT [masach], [matheloaisach], [tensach], [matacgia], [ngaynhap], [trigia], [mamxuatban], [nhaxuatban], [tinhtrang] "
+        query &= "FROM [tblSach] "
+        query &= "WHERE [tinhtrang] = @tinhtrang "
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@tinhtrang", maTinhTrang)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        ListSach.Clear()
+                        While reader.Read()
+                            ListSach.Add(New SachDTO(reader("masach"), reader("matheloaisach"), reader("tensach"), reader("matacgia"), reader("ngaynhap"), reader("trigia"), reader("namxuatban"), reader("nhaxuatban"), reader("tinhtrang")))
+                        End While
+                    End If
+
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False, "Lấy tất cả sách theo tình trạng không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
 End Class

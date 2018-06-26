@@ -8,4 +8,9 @@
         Dim newform = New frmThongTinSach()
         newform.ShowDialog(Me)
     End Sub
+
+    Private Sub btnTraCuuSach_Click(sender As Object, e As EventArgs) Handles btnTraCuuSach.Click
+        Dim newform = New frmTraCuuSach()
+        newform.ShowDialog(Me)
+    End Sub
 End Class

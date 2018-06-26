@@ -4,7 +4,7 @@ Imports Utility
 
 Public Class frmThongTinSach
     Private lsBus As TheLoaiSachBUS
-
+    Private tgBus As TacGiaBUS
     Private sbus As SachBUS
     Private Sub frmThongTinSach_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         sbus = New SachBUS()
@@ -30,7 +30,7 @@ Public Class frmThongTinSach
         '1. Mapping data from GUI control
         sach.MaSach = tbxMasach.Text
         sach.TenSach = tbxTensach.Text
-        sach.MaTacGia = tbxTacgia.Text
+        sach.MaTacGia = Convert.ToString(cbbTacGia.Text)
         sach.NamXuatBan = tbxNamxuatban.Text
         sach.NgayNhap = datiNgaynhap.Value
         sach.NhaXuatBan = tbxNhaxuatban.Text
@@ -50,16 +50,16 @@ Public Class frmThongTinSach
         If (result.FlagResult = True) Then
             MessageBox.Show("Thêm Sách thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
             'set MSSH auto
-            Dim nextMshs = "1"
-            result = sbus.buildMaSach(nextMshs)
+            Dim nextMsS = "1"
+            result = sbus.buildMaSach(nextMsS)
             If (result.FlagResult = False) Then
                 MessageBox.Show("Lấy danh tự động mã Sách không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Me.Close()
                 Return
             End If
-            tbxMasach.Text = nextMshs
+            tbxMasach.Text = nextMsS
             tbxTensach.Text = String.Empty
-            tbxTacgia.Text = String.Empty
+            cbbTacGia.Text = String.Empty
             tbxNhaxuatban.Text = String.Empty
             cbbTheLoai.Text = String.Empty
             tbxTrigia.Text = String.Empty
@@ -70,6 +70,7 @@ Public Class frmThongTinSach
             System.Console.WriteLine(result.SystemMessage)
         End If
     End Sub
+
     Private Sub frmSachGUI_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         ' Load TheLoaiSach list
@@ -88,11 +89,22 @@ Public Class frmThongTinSach
 
     End Sub
 
-    Private Sub tbxTacgia_TextChanged(sender As Object, e As EventArgs) Handles tbxTacgia.TextChanged
+    Private Sub frmTacGiaGUI_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-    End Sub
 
-    Private Sub tbxNamxuatban_TextChanged(sender As Object, e As EventArgs) Handles tbxNamxuatban.TextChanged
+        Dim listTacGia = New List(Of TacGiaDTO)
+
+        Dim result As Result
+        result = tgBus.selectALL(listTacGia)
+        If (result.FlagResult = False) Then
+            MessageBox.Show("Lấy danh sách tác giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            System.Console.WriteLine(result.SystemMessage)
+            Me.Close()
+            Return
+        End If
+        cbbTacGia.DataSource = New BindingSource(listTacGia, String.Empty)
+        cbbTacGia.DisplayMember = "TenTacGia"
+        cbbTacGia.ValueMember = "MaTacGia"
 
     End Sub
 End Class
